@@ -13,5 +13,31 @@ export default defineConfig({
   },
   server: {
     port: 3001,
+    proxy: {
+      "/books": {
+        target: "http://localhost:3000/",
+        changeOrigin: true,
+      },
+      "/borrows": {
+        target: "http://localhost:3000/",
+        changeOrigin: true,
+      },
+      "/readers": {
+        target: "http://localhost:3000/",
+        changeOrigin: true,
+      },
+      "/publishers": {
+        target: "http://localhost:3000/",
+        changeOrigin: true,
+      },
+      "/admin": {
+        target: "http://localhost:3000/",
+        changeOrigin: true,
+      },
+      "/auth": {
+        target: "http://localhost:3000/",
+        changeOrigin: true,
+      },
+    },
   },
 });
